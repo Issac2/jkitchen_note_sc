@@ -13,7 +13,7 @@ https://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud
 ### 1. 基本组件属性
 
 - route，路由
-    - id，唯一标识
+	- id，唯一标识
     - uri，转发目的地址，要跳转到哪
     - order，顺序，数字越小越先使用
     - predicates，断言器（这翻译），就是判断匹配的作用，数组，可配置多个
@@ -33,6 +33,10 @@ https://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud
 - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
 
 ### 3. gateway 提供的过滤器
+
+Spring Cloud Gateway提供了很多种类的过滤器工厂，网关过滤器有近二十个实现类
+
+总得说来可以分为七类：Header、Parameter、Path、Status、Redirect跳转、Hystrix熔断和RateLimiter限流等。
 
 - AddRequestHeader=X-Request-Foo, Bar
 - AddRequestParameter=foo, bar
