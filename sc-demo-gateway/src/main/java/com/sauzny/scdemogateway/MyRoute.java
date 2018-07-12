@@ -44,12 +44,14 @@ public class MyRoute {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         
-        // 当请求路径为/image/webp时，将请求转发到http://httpbin.org:80，并对响应进行过滤处理，增加响应的头部X-AnotherHeader: baz。
+        // 当请求路径为/custom时，将请求转发到http://www.163.com，
+        // 并对响应进行过滤处理，增加响应的头部X-AnotherHeader: baz。
+        // 还使用了我自定义的filter
         
         return builder.routes()
-                .route(r -> r.path("/image/webp")
-                        .filters(f -> f.addResponseHeader("X-AnotherHeader", "baz"))
-                        .uri("http://httpbin.org:80")
+                .route(r -> r.path("/custom")
+                        .filters(f -> f.addResponseHeader("X-AnotherHeader", "baz").filter(new MyCustomGatewayFilter()))
+                        .uri("http://www.163.com")
                 )
                 .build();
         
