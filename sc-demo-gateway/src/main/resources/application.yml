@@ -1,0 +1,65 @@
+# https://cloud.spring.io/spring-cloud-static/Finchley.RELEASE/single/spring-cloud.html#_spring_cloud_gateway
+
+server.port: 28080
+
+spring:
+  application:
+      name: sbc-demo-gateway
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        instanceId: ${spring.application.name}-${server.port}
+        port: ${server.port}
+        service-name: ${spring.application.name}
+    gateway:
+      #locator:
+      #  enabled: true
+      #default-filters:
+      #- AddResponseHeader=X-Response-Default-Foo, Default-Bar
+
+      routes:
+      # =====================================
+      # 默认转发，在无法匹配其他转发时，按照此配置跳转到blueskykong.com
+      - id: default_path_to_http
+        uri: https://www.qq.com
+        order: 10000
+        predicates:
+        - Path=/**
+      # =====================================
+      - id: service_to_demo
+        uri: https://www.baidu.com
+        order: 9500
+        predicates:
+        - Path=/user/aaa
+        # 各种判断 demo
+        # - RemoteAddr=192.168.1.1/24
+        # - Query=baz
+        # - Method=GET
+        # - Host=**.somehost.org
+        # - Header=X-Request-Id, \d+
+        # - Cookie=chocolate, ch.p
+        # - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+        # - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
+        # - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
+        filters:
+        - StripPrefix=1
+        # - AddRequestHeader=X-Request-Foo, Bar
+        # - AddRequestParameter=foo, bar
+        # - AddResponseHeader=X-Response-Foo, Bar
+      # =====================================
+      - id: service_to_sbc-demo-provider
+        uri: lb://sbc-demo-provider
+        order: 8000
+        predicates:
+        - Path=/provider/**
+        filters:
+        - StripPrefix=1
+      # =====================================
+      - id: websocket_test
+        uri: ws://localhost:9000
+        order: 9000
+        predicates:
+        - Path=/echo
+      
