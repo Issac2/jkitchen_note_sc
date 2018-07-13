@@ -30,3 +30,7 @@ ribbon:
   MaxAutoRetries: 1
   # 最大重试服务实例数（不包括第一个服务实例）
   MaxAutoRetriesNextServer: 1
+  
+# for Hystrix Metrics Stream 监控页面
+# http://localhost:18080/actuator/hystrix.stream
+management.endpoints.web.exposure.include: hystrix.stream
