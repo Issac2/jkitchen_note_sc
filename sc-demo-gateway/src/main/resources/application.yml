@@ -49,6 +49,24 @@ spring:
         # - AddRequestParameter=foo, bar
         # - AddResponseHeader=X-Response-Foo, Bar
       # =====================================
+      - id: service_to_MyGatewayFilterFactory
+        uri: https://github.com
+        order: 9600
+        predicates:
+        - Path=/mygate/**
+        filters:
+        - StripPrefix=1
+        - My0
+        - My1=my1value
+        - name: My2
+          args:
+            name: my2name
+            uri: www.126.com
+            uris:
+            - www.baidu.com
+            - www.qq.com
+            - www.163.com
+      # =====================================
       - id: service_to_sbc-demo-provider
         uri: lb://sbc-demo-provider
         order: 8000
