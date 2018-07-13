@@ -6,11 +6,11 @@ spring cloud demo
 
 组件：
 
-- consul 注册中心
+- consul 注册中心 [文档](sc-demo-provider/md/consulKeyValue.md)
 - consul 配置中心 [文档](sc-demo-provider/md/consulKeyValue.md)
-- gateway 网关
-- hystrix dashboard 熔断器仪表盘
-- turbine 集群信息收集
+- gateway 网关 [文档](sc-demo-gateway/README.md)
+- hystrix dashboard 熔断器仪表盘 [文档](sc-demo-hystrixdashboard/README.md)
+- turbine 集群信息收集 [文档](sc-demo-turbine/README.md)
 - feign+ribbon 通信+客户端负载均衡
 
 demo服务端口号占用：
