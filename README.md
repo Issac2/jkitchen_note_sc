@@ -7,7 +7,7 @@ spring cloud demo
 组件：
 
 - consul 注册中心
-- consul 配置中心
+- consul 配置中心 [文档](sc-demo-provider/md/consulKeyValue.md)
 - gateway 网关
 - hystrix dashboard 熔断器仪表盘
 - turbine 集群信息收集
