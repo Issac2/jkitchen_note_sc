@@ -9,6 +9,9 @@ import feign.hystrix.FallbackFactory;
 
 @FeignClient(name = "sbc-demo-provider", fallbackFactory=MyHystrixFallbackFactory.class)
 public interface MyFeignClient {
+    
+    @GetMapping(value = "/peizhi")
+    String peizhi();
 
     @GetMapping(value = "/ling")
     String ling();
@@ -32,29 +35,35 @@ class MyHystrixFallbackFactory implements FallbackFactory<MyFeignClient> {
     @Override
     public MyFeignClient create(Throwable cause) {
         return new MyFeignClient() {
+            
+            @Override
+            public String peizhi() {
+                return "hystrix test peizhi " + LocalDateTime.now();
+            }
+            
             @Override
             public String ling() {
-                return "hystrix test ling" + LocalDateTime.now();
+                return "hystrix test ling " + LocalDateTime.now();
             }
 
             @Override
             public String yi() {
-                return "hystrix test yi" + LocalDateTime.now();
+                return "hystrix test yi " + LocalDateTime.now();
             }
 
             @Override
             public String er() {
-                return "hystrix test er" + LocalDateTime.now();
+                return "hystrix test er " + LocalDateTime.now();
             }
 
             @Override
             public String san() {
-                return "hystrix test san" + LocalDateTime.now();
+                return "hystrix test san " + LocalDateTime.now();
             }
 
             @Override
             public String ba() {
-                return "hystrix test ba" + LocalDateTime.now();
+                return "hystrix test ba " + LocalDateTime.now();
             }
         };
     }
