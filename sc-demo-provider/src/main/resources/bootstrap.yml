@@ -4,7 +4,7 @@ spring.profiles.active: dev
 
 spring:
   application:
-    name: sbc-demo-provider
+    name: sc-demo-provider
   cloud:
     consul:
       # 一般来说此处应该配置 127.0.0.1

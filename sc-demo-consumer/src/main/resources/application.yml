@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: sbc-demo-consumer
+    name: sc-demo-consumer
   cloud:
     consul:
       # 一般来说此处应该配置 127.0.0.1

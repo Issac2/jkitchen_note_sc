@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spc-demo-hystrixdashboard
+    name: sc-demo-hystrixdashboard
 
 server: 
   port: 58080
