@@ -51,12 +51,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		
-		<!-- 熔断器集群监控 -->
-		<dependency> 
-		    <groupId>org.springframework.cloud</groupId> 
-		    <artifactId>spring-cloud-netflix-turbine</artifactId> 
-		</dependency> 
-		
 		<!-- 开发过程中保存文件，自动重启 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
