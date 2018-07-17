@@ -1,9 +1,7 @@
 # turbine
 
-完整部署图（盗用了eureka）
+完整部署图（盗用了eureka，我这里使用的是consul）
 
 ![](md/turbine01.jpg)
 
-我的demo中只是使用了turbine
-
-按照图中描述，还需要turbine-stream，则需要引入 RabbitMQ 。
+启动服务，访问地址：http://localhost:8080

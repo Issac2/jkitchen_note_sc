@@ -13,6 +13,9 @@ spring cloud demo
 - turbine 集群信息收集 [文档](sc-demo-turbine/README.md)
 - feign+ribbon 通信+客户端负载均衡
 
+
+- Sleuth+Zipkin 分布式链路跟踪
+
 demo服务端口号占用：
 
 | 服务名 | 端口号 |
