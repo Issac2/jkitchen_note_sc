@@ -11,7 +11,15 @@ spring:
       # 一般来说此处应该配置 127.0.0.1
       host: 127.0.0.1
       port: 8500
-
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例，默认是 0.1，数值范围  0.0 到 1.0
+  zipkin:
+    base-url: http://192.168.73.1:9411/ # 指定了 Zipkin 服务器的地址
+      
 # feign配置
 feign:
   hystrix:

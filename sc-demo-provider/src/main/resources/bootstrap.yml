@@ -46,6 +46,14 @@ spring:
           #max-interval: 2000
           # 每次重试失败后，重试间隔所增加的倍数
           #multiplier: 1.1
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例，默认是 0.1，数值范围  0.0 到 1.0
+  zipkin:
+    base-url: http://192.168.73.1:9411/ # 指定了 Zipkin 服务器的地址
 
 #spring.cloud.consul.config.watch.delay: 1000
 #spring.cloud.consul.config.watch.enabled: true

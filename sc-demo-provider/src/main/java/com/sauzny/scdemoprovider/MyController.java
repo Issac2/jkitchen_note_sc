@@ -22,7 +22,7 @@ public class MyController {
     
     @GetMapping("/peizhi")
     public Map<String, Object> peizhi() {
-        log.info("我想从配置中心获取配置");
+        log.info("从配置中心获取配置");
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("myConfigurationDemo01.getName()", myConfigurationDemo01.getName());
         map.put("myConfigurationDemo01.getAddress()", myConfigurationDemo01.getAddress());
@@ -33,6 +33,9 @@ public class MyController {
         map.put("myConfigurationDemo03.getName()", myConfigurationDemo03.getName());
         map.put("myConfigurationDemo03.getMysql1url()", myConfigurationDemo03.getMysql1url());
         map.put("myConfigurationDemo03.getMysqlurl()", myConfigurationDemo03.getMysqlurl());
+
+        log.info("provider say Controller peizhi() for zipkin");
+        
         return map;
     }
     

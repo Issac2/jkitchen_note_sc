@@ -67,8 +67,8 @@ spring:
             - www.qq.com
             - www.163.com
       # =====================================
-      - id: service_to_sbc-demo-provider
-        uri: lb://sbc-demo-provider
+      - id: service_to_sbc-demo-consumer
+        uri: lb://sbc-demo-consumer
         order: 8000
         predicates:
         - Path=/provider/**
