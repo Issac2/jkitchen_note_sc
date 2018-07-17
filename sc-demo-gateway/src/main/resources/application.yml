@@ -33,21 +33,8 @@ spring:
         order: 9500
         predicates:
         - Path=/user/aaa
-        # 各种判断 demo
-        # - RemoteAddr=192.168.1.1/24
-        # - Query=baz
-        # - Method=GET
-        # - Host=**.somehost.org
-        # - Header=X-Request-Id, \d+
-        # - Cookie=chocolate, ch.p
-        # - After=2017-01-20T17:42:47.789-07:00[America/Denver]
-        # - Before=2017-01-20T17:42:47.789-07:00[America/Denver]
-        # - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
         filters:
         - StripPrefix=1
-        # - AddRequestHeader=X-Request-Foo, Bar
-        # - AddRequestParameter=foo, bar
-        # - AddResponseHeader=X-Response-Foo, Bar
       # =====================================
       - id: service_to_MyGatewayFilterFactory
         uri: https://github.com
@@ -71,9 +58,9 @@ spring:
         uri: lb://sbc-demo-consumer
         order: 8000
         predicates:
-        - Path=/provider/**
+        - Path=/**
         filters:
-        - StripPrefix=1
+        - PrefixPath=/api/consumer
       # =====================================
       - id: websocket_test
         uri: ws://localhost:9000

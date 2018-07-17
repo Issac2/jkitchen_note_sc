@@ -10,22 +10,22 @@ import feign.hystrix.FallbackFactory;
 @FeignClient(name = "sbc-demo-provider", fallbackFactory=MyHystrixFallbackFactory.class)
 public interface MyFeignClient {
     
-    @GetMapping(value = "/peizhi")
+    @GetMapping(value = "/api/provider/peizhi")
     String peizhi();
 
-    @GetMapping(value = "/ling")
+    @GetMapping(value = "/api/provider/ling")
     String ling();
     
-    @GetMapping(value = "/yi")
+    @GetMapping(value = "/api/provider/yi")
     String yi();
     
-    @GetMapping(value = "/er")
+    @GetMapping(value = "/api/provider/er")
     String er();
     
-    @GetMapping(value = "/san")
+    @GetMapping(value = "/api/provider/san")
     String san();
     
-    @GetMapping(value = "/ba")
+    @GetMapping(value = "/api/provider/ba")
     String ba();
 }
 
