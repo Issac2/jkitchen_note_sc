@@ -1,1 +1,5 @@
 server.port: 8080
+
+# for Hystrix Metrics Stream 监控页面
+# http://localhost:18080/actuator/hystrix.stream
+management.endpoints.web.exposure.include: info, health, hystrix.stream

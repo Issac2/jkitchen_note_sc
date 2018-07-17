@@ -54,6 +54,11 @@ spring:
       probability: 1.0 # 将采样比例，默认是 0.1，数值范围  0.0 到 1.0
   zipkin:
     base-url: http://192.168.73.1:9411/ # 指定了 Zipkin 服务器的地址
+  rabbitmq:
+    host: 192.168.73.1
+    port: 5673
+    username: sc
+    password: sc
 
 #spring.cloud.consul.config.watch.delay: 1000
 #spring.cloud.consul.config.watch.enabled: true
