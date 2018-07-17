@@ -86,12 +86,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<exclusions>
 				<!-- 排除tomcat -->
-
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-
 			</exclusions>
 		</dependency>
 
