@@ -12,6 +12,8 @@ spring:
       port: 8500
       enabled: true
       discovery:
+        # 服务注册，使用ip注册，不使用localhost
+        prefer-ip-address: true
         # 默认值  ${spring.application.name}-${server.port}
         instanceId: ${spring.application.name}-${server.port}
         # 默认值  ${server.port}

@@ -6,7 +6,16 @@ spring:
         # 一般来说此处应该配置 127.0.0.1
         host: 127.0.0.1
         port: 8500
-        
+        discovery:
+          prefer-ip-address: true
+          instanceId: ${spring.application.name}-${server.port}
+          port: ${server.port}
+          service-name: ${spring.application.name}
+  rabbitmq:
+    host: 192.168.73.1
+    port: 5673
+    username: sc
+    password: sc    
 server: 
   port: 48080
   
@@ -19,3 +28,4 @@ turbine:
   # 为true时，可以让同一主机上的服务通过主机名与端口号的组合来进行区分
   # 默认情况以 host 来区分不同的服务
   # combine-host-port: true 
+  

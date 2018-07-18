@@ -10,6 +10,7 @@ spring:
       host: 127.0.0.1
       port: 8500
       discovery:
+        prefer-ip-address: true
         instanceId: ${spring.application.name}-${server.port}
         port: ${server.port}
         service-name: ${spring.application.name}
@@ -54,8 +55,8 @@ spring:
             - www.qq.com
             - www.163.com
       # =====================================
-      - id: service_to_sbc-demo-consumer
-        uri: lb://sbc-demo-consumer
+      - id: service_to_sc-demo-consumer
+        uri: lb://sc-demo-consumer
         order: 8000
         predicates:
         - Path=/**

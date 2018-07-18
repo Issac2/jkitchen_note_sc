@@ -11,6 +11,9 @@ spring:
       # 一般来说此处应该配置 127.0.0.1
       host: 127.0.0.1
       port: 8500
+      discovery:
+        # 服务注册，使用ip注册，不使用localhost
+        prefer-ip-address: true
   sleuth:
     web:
       client:
