@@ -23,7 +23,15 @@ http://localhost:9411
 
 `https://github.com/openzipkin/zipkin/blob/master/zipkin-server/src/main/resources/zipkin-server-shared.yml`
 
-配合rabbitmq启动 `RABBIT_ADDRESSES=192.168.73.1:5673 RABBIT_VIRTUAL_HOST=testmqhost RABBIT_USER=testmqun RABBIT_PASSWORD=testmqpw STORAGE_TYPE=mysql MYSQL_HOST=192.168.73.1 MYSQL_USER=root MYSQL_PASS=root java -jar zipkin.jar`
+配合rabbitmq启动命令 `RABBIT_ADDRESSES=192.168.73.1:5673 RABBIT_VIRTUAL_HOST=testmqhost RABBIT_USER=testmqun RABBIT_PASSWORD=testmqpw STORAGE_TYPE=mysql MYSQL_HOST=192.168.73.1 MYSQL_USER=root MYSQL_PASS=root java -jar zipkin.jar`
+
+在windows上源码打包：
+
+`./mvnw -DskipTests --also-make -pl zipkin-server clean install`
+
+在windows上打包后启动：
+
+`RABBIT_ADDRESSES=localhost:5673 STORAGE_TYPE=mysql MYSQL_USER=root MYSQL_PASS=root java -jar ./zipkin-server/target/zipkin-server-*exec.jar`
 
 ##### 存储方式说明：
 

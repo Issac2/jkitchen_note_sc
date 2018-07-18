@@ -4,4 +4,4 @@
 
 ![](md/turbine01.jpg)
 
-启动服务，访问地址：http://localhost:8080
+启动服务，访问地址：http://localhost:48080/turbine.stream
