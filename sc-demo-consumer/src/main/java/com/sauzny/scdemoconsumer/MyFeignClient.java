@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import feign.hystrix.FallbackFactory;
 
-@FeignClient(name = "sbc-demo-provider", fallbackFactory=MyHystrixFallbackFactory.class)
+@FeignClient(name = "sc-demo-provider", fallbackFactory=MyHystrixFallbackFactory.class)
 public interface MyFeignClient {
     
     @GetMapping(value = "/api/provider/peizhi")
