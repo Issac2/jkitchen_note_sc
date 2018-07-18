@@ -17,7 +17,7 @@ public class My0GatewayFilterFactory extends AbstractGatewayFilterFactory<Object
     public GatewayFilter apply(Object config) {
         return (exchange, chain) -> {
             // 使用 exchange 进行自己需要的操作
-            log.info("我是一个自定义的无参数，无值的filter，我是My0GatewayFilterFactory");
+            log.info("I'm a filter,no args and no value, my name is My0GatewayFilterFactory");
             return chain.filter(exchange);
         };
     }

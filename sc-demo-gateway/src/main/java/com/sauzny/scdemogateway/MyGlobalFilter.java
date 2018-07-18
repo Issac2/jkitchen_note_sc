@@ -22,7 +22,7 @@ public class MyGlobalFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("我是一个全局过滤器，我的名字是MyGlobalFilter");
+        log.info("I impl the GlobalFilter,my name is MyGlobalFilter");
         // exchange，理解为上下文吧，可以对当前的请求做出一些修改
         //exchange.getRequest();
         //exchange.getResponse();

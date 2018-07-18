@@ -31,7 +31,7 @@ public class My1GatewayFilterFactory extends AbstractGatewayFilterFactory<Abstra
         return (exchange, chain) -> {
             
             // 使用 exchange 进行自己需要的操作
-            log.info("我是一个自定义的无参数，有值的filter，我是My1GatewayFilterFactory，传入的值是{}", config.getName());
+            log.info("I'm a filter,no args and has value,my name is My1GatewayFilterFactory,value is {}", config.getName());
 
             return chain.filter(exchange);
         };

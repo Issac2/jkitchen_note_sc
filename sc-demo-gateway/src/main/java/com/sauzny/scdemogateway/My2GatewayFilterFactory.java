@@ -41,7 +41,7 @@ public class My2GatewayFilterFactory extends AbstractGatewayFilterFactory<My2Gat
 
         return (exchange, chain) -> {
             // 使用 exchange 进行自己需要的操作
-            log.info("我是一个自定义的有参数，无值的filter，我是My2GatewayFilterFactory，传入的参数，name={}, uri={}, uris={}", my2.getName(), my2.getUri(), my2.getUris());
+            log.info("I'm a filter,has args and no value,my name is My2GatewayFilterFactory,all args,name={}, uri={}, uris={}", my2.getName(), my2.getUri(), my2.getUris());
             return chain.filter(exchange);
         };
     }
