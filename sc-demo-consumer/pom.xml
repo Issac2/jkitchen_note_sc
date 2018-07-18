@@ -38,17 +38,21 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+		
+		<!-- 监控，健康检查，熔断器仪表盘访问 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 
 		<!-- 熔断器 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 		</dependency>
-		
-		<!-- 监控，健康检查，熔断器仪表盘访问 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-netflix-hystrix-stream</artifactId>
 		</dependency>
 		
 		<!-- sleuth + zipkin 分布式追踪 -->
@@ -61,7 +65,7 @@
 		    <artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 		
-		<!-- 分布式追踪依赖 rabbitmq -->
+		<!-- 分布式追踪依赖 熔断器 rabbitmq -->
 		<dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
