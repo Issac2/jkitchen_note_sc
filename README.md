@@ -39,5 +39,6 @@ web地址访问：
 | consul | http://192.168.73.201:8500 | web ui |
 | rabbitmq | http://192.168.73.1:15672 | web ui |
 | hystrixdashboard | http://192.168.73.1:58080/hystrix | web ui |
+| zipkin | http://192.168.73.203:9411 | web ui |
 | turbine | http://192.168.73.1:48080/turbine.stream | api |
 | gateway | http://192.168.73.1:28080/ | api |
