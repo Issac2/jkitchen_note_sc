@@ -6,13 +6,13 @@ spring cloud demo，[官方文档地址](https://cloud.spring.io/spring-cloud-st
 
 #### 测试机器，共7台：
 
-192.168.73.201，部署consul server
-192.168.73.202，部署consul server
-192.168.73.203，部署consul server，部署zipkin-server
-192.168.73.204，部署consul client，部署provider demo，部署consumer demo
-192.168.73.205，部署consul client，部署provider demo，部署consumer demo
-192.168.73.206，部署consul client，部署provider demo，部署consumer demo
-192.168.73.1，部署consul client，部署gateway，部署turbine，部署hystrixdashboard，部署mysql，部署rabbitmq
+- 192.168.73.201，部署consul server
+- 192.168.73.202，部署consul server
+- 192.168.73.203，部署consul server，部署zipkin-server
+- 192.168.73.204，部署consul client，部署provider demo，部署consumer demo
+- 192.168.73.205，部署consul client，部署provider demo，部署consumer demo
+- 192.168.73.206，部署consul client，部署provider demo，部署consumer demo
+- 192.168.73.1，部署consul client，部署gateway，部署turbine，部署hystrixdashboard，部署mysql，部署rabbitmq
 
 #### consul服务注册图：
 
