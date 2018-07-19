@@ -17,6 +17,12 @@
 management.endpoints.web.exposure.include: info, health, hystrix.stream
 ```
 
+pom中增加组件
+
+```
+spring-cloud-starter-netflix-hystrix
+```
+
 #### 二、集群监控
 
 需要启动 `sc-demo-turbine`

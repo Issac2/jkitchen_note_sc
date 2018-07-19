@@ -25,7 +25,7 @@ spring-cloud-stream-binder-rabbit
 启动类增加注解
 
 ```
-
+@EnableCircuitBreaker
 ```
 
 #### rabbitmq
