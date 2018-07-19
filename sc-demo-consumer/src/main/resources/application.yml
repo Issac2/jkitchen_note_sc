@@ -49,4 +49,5 @@ ribbon:
   
 # for Hystrix Metrics Stream 监控页面
 # http://localhost:18080/actuator/hystrix.stream
+# pom中引入actuator组件，默认提供监控页面是/actuator/info和/actuator/health
 management.endpoints.web.exposure.include: info, health, hystrix.stream
