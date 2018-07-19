@@ -1,4 +1,4 @@
-# zipkin-serve
+# zipkin-server
 
 ## 一、基本安装部署启动
 

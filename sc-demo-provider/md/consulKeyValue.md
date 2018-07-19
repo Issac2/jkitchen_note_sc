@@ -20,15 +20,17 @@ http://192.168.73.201:8500/ui/consul-cluster/kv
 	- config/application/data
 	- config/application,dev/data
 - 指定服务：顶层目录名是config，二级目录名是服务名（,环境），三级是文件名或者key名。如：
-	- config/sbc-demo-provider/data
-	- config/sbc-demo-provider,dev/data
+	- config/sc-demo-provider/data
+	- config/sc-demo-provider,dev/data
 
 注意：
 - 优先读取指定服务指定环境中的数据
 - 优先读取指定服务中的属性，再读取全局中的属性
 - 使用文件的形式，默认文件名是data
 
-## 二、 bootstrap.yml
+![consul03.png](consul03.png)
+
+## 二、 业务服务端 bootstrap.yml
 
 使用consul配置中心需要在bootstrap.yml中定义，bootstrap.yml是第一启动文件，道理就是先拿到配置才能启动服务。
 
@@ -67,22 +69,24 @@ number=111
 
 似乎是和git配合使用，我没有使用这种方式
 
-## 三、spring cloud
+## 三、业务服务端代码
+
+参考项目 `sc-demo-provider`
 
 ### 3.1 ConfigurationProperties
 
-`com.sauzny.sbcdemoprovider.MyConfigurationDemo01`使用注解`@ConfigurationProperties`
+`com.sauzny.scdemoprovider.MyConfigurationDemo01`使用注解`@ConfigurationProperties`
 
-并在`com.sauzny.sbcdemoprovider.ProviderApp`增加注解`@EnableConfigurationProperties({MyConfigurationDemo01.class})`
+并在`com.sauzny.scdemoprovider.ProviderApp`增加注解`@EnableConfigurationProperties({MyConfigurationDemo01.class})`
 
 实现获取属性数据并能实时刷新
 
 ### 3.2 static属性值
 
-`com.sauzny.sbcdemoprovider.MyConfigurationDemo02`，这种发方式不能实时刷新
+`com.sauzny.scdemoprovider.MyConfigurationDemo02`，这种发方式不能实时刷新
 
 ### 3.3 @Value("${key}")
 
-`com.sauzny.sbcdemoprovider.MyConfigurationDemo03`，可以实时刷新
+`com.sauzny.scdemoprovider.MyConfigurationDemo03`，可以实时刷新
 
 

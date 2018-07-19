@@ -13,8 +13,6 @@ consul提供的一些关键特性：
 
 ![image](https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/d9870c928e2dc0f7b140ee3b5a7a99a4274859fe7dcee32c82deacc5f56ce4ce53b3c4e3e43656f6e91929b95d38090a?pictype=scale&from=30113&version=3.3.3.3&uin=361376366&fname=consul-cluster-01.png&size=750)
 
-consul集群安装在别的文档
-
 ##### 实际使用：
 
 创建consul server实例形成集群（查看集群安装文档），
@@ -23,7 +21,13 @@ consul集群安装在别的文档
 
 也就是说，每一个业务服务启动的时候都连接本地的consul agent。
 
-##### consul client 配置文件demo：
+##### consul集群部署
+
+[consul集群安装文档](consul集群安装.md)
+
+##### consul客户端部署
+
+配置文件demo：
 
 ```
 {
@@ -65,4 +69,16 @@ consul集群安装在别的文档
 nohup ./consul agent -config-file consul_config.json -ui &
 ./consul join -http-addr=127.0.0.1:8500 192.168.73.201
 ```
+
+##### consul client 对本机服务的查删
+
+使用 curl 命令
+
+查看：
+
+`curl -v 127.0.0.1:8500/v1/agent/services`
+
+删除：
+
+`curl -v -X PUT 127.0.0.1:8500/v1/agent/service/deregister/要删除的服务id`
 
